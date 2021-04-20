@@ -3,8 +3,8 @@ const { Post } = require('../models/');
 
 const postsController = {
     index: async (req, res) => {
-        let post = await Post.findAll();
-        return res.json(post);
+        const post = await Post.findAll();
+        return res.render('index', {listaPosts: post});
     },
 
     create: async (req, res) => {
