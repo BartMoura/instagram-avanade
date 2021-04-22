@@ -6,6 +6,12 @@ const usuariosController = {
         return res.render('usuarios', { listaUsuarios: usuarios });
     },
 
+    // renderizar a página de registro
+    // não é asyn porque não está esperando nada (nesse caso do banco de dados)
+    registro: (req, res) => {
+        return res.render('registro');
+    },
+
     create: async (req, res) => {
         let {nome, email, senha} = req.body;
 
